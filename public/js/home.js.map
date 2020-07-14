@@ -1,0 +1,1 @@
+{"version":3,"sources":["home.js"],"names":["jQuery"],"mappings":";AAEGA","file":"home.js","sourceRoot":"../src","sourcesContent":["(function ($) {\n  // generate random numbers\n})(jQuery);\n"]}

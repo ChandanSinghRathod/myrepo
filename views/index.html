@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> <%= appTitle %></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Bulk Payments">
+	<meta name="author" content="Enable Digital">
+	<meta http-equiv="Content-Type" content="text/html">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap-multiselect.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!--===============================================================================================-->
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
+	<div class="container">
+		<a class="navbar-brand" href="#"><%= appTitle %></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="/">Home
+						<span class="sr-only">(current)</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<!-- Vertically Centered Content -->
+<header class="masthead">
+	<div class="container h-100">
+		<div class="row h-100 align-items-center">
+			<div class="col-12">
+				<h1 class="font-weight-light">Form <%= appTitle %></h1>
+				<span class="text-danger small"><%= message %></span>
+				<form method="POST" action="/form-data">
+					<div class="form-group">
+					  <label for="exampleFormControlSelect1">IP1</label>
+					  <select class="form-control" name="ip1" id="ip1">
+						<option value="none" selected disabled hidden>Select value</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					  </select>
+					</div>
+					<div class="form-group">
+						<label for="ip2">IP2(PL)</label><br/>
+						<select name="ip2" id="ip2" style="width:900px;" multiple="multiple">
+							<option value="pl1=1">pl1=4</option>
+							<option value="pl2=12">pl2=12</option>
+							<option value="pl3=4">pl3=10</option>
+							<option value="pl4=4">pl4=4</option>
+							<option value="pl5=1">pl5=1</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="ip3">IP3(L)</label><br/>
+						<select name="ip3" id="ip3" multiple="multiple">
+							<option value="l1=1">l1=2</option>
+							<option value="l2=12">l2=2</option>
+							<option value="l3=4">l3=20</option>
+							<option value="l4=4">l4=34</option>
+							<option value="l5=1">l5=19</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="ip4">IP4(BR)</label><br/>
+						<select name="ip4" id="ip4" multiple="multiple">
+							<option value="br1=1">br1=2</option>
+							<option value="br2=12">br2=2</option>
+							<option value="br3=4">br3=20</option>
+							<option value="br4=4">br4=34</option>
+							<option value="br5=1">br5=19</option>
+						</select>
+					</div>
+					<button type="submit" class="btn btn-success">Submit</button>
+				  </form>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- footer -->
+<section class="py-5 text-light bg-dark">
+	<div class="container">
+		<p><%= appOwner %></p>
+	</div>
+</section>
+<!--===============================================================================================-->
+<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
+<script type="text/javascript" src="js/home.js"></script>
+<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="vendor/bootstrap/js/bootstrap-multiselect.js"></script>
+<script>
+	$(document).ready(function() {
+		$('#ip2').multiselect();
+		$('#ip3').multiselect();
+		$('#ip4').multiselect();
+	});
+</script>
+</body>
+</html>
